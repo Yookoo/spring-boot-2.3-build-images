@@ -24,7 +24,9 @@ jobs:
       run: mvn -B spring-boot:build-image --file pom.xml
     - name: Login GitHub Packages
       run: docker login -u ${{ github.actor }} -p ${{ secrets.ACTIONS }} docker.pkg.github.com
+    - name: Update docker tag 
+      run: docker tag docker:0.0.1-SNAPSHOT yookoo/docker:0.0.1-SNAPSHOT
     - name: Push to GitHub Packages
-      run: docker push docker:0.0.1-SNAPSHOT
+      run: docker push yookoo/docker:0.0.1-SNAPSHOT
       
       
