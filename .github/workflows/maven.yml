@@ -32,8 +32,8 @@ jobs:
     - name: Login GitHub Packages
       run: docker login -u ${{ github.actor }} -p ${{ secrets.ACTIONS }} docker.pkg.github.com
     - name: Update docker tag 
-      run: docker tag docker:0.0.1-SNAPSHOT docker.pkg.github.com/yookoo/docker/docker:0.0.1-SNAPSHOT
+      run: docker tag docker:0.0.1-SNAPSHOT docker.pkg.github.com/yookoo/spring-boot-2.3-build-images/docker:0.0.1-SNAPSHOT
     - name: Push to GitHub Packages
-      run: docker push docker.pkg.github.com/yookoo/docker/docker:0.0.1-SNAPSHOT
+      run: docker push docker.pkg.github.com/yookoo/spring-boot-2.3-build-images/docker:0.0.1-SNAPSHOT
       
       
