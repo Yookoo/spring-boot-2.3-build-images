@@ -22,3 +22,11 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B spring-boot:build-image --file pom.xml
+    - name: Push to GitHub Packages
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ github.actor }}
+        password: ${{ secrets.ACTIONS }}
+        registry: docker.pkg.github.com
+        repository: yookoo/docker
+        tag_with_ref: true
